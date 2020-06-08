@@ -1,0 +1,36 @@
+apiVersion: v1
+entries:
+  sentry:
+  - apiVersion: v2
+    appVersion: 10.0.0
+    created: "2020-06-08T17:08:29.681074-04:00"
+    dependencies:
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.3.2
+    - condition: kafka.enabled
+      name: kafka
+      repository: https://charts.bitnami.com/bitnami
+      version: 9.0.4
+    - condition: clickhouse.enabled
+      name: clickhouse
+      repository: https://sentry-kubernetes.github.io/charts
+      version: 1.0.1
+    - alias: rabbitmq
+      condition: rabbitmq.enabled
+      name: rabbitmq-ha
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 1.38.2
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://kubernetes-charts.storage.googleapis.com/
+      version: 8.2.1
+    description: A Helm chart for Kubernetes
+    digest: dad6614d03c90a6293f5eec2893013ccddbb164a546349bbce96dbd95c2311b6
+    name: sentry
+    type: application
+    urls:
+    - https://github.com/k/sentry-charts/releases/download/sentry-1.3.1-k/sentry-1.3.1-k.tgz
+    version: 1.3.1-k
+generated: "2020-06-08T17:08:29.189185-04:00"
